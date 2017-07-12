@@ -6,18 +6,21 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
-import {ServerService} from './server.service'
+import {ServerService} from './server.service';
+import { RegisterComponent } from './register/register.component'
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '', component: LoginComponent},
-    { path: 'login', component: LoginComponent}
+    { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
