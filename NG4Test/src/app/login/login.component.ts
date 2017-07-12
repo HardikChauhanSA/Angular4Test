@@ -21,8 +21,12 @@ export class LoginComponent implements OnInit {
 });
   }
 
-login(email : string, password : string){
-  if(email == '' || password == ''){
+login(){
+  var email = this.myForm.get('email').value;
+ var password = this.myForm.get('password').value;
+ console.log(email);
+ console.log(password);
+  if(email == '' || password == '' || email == null || password == null){
     alert("Invalid email or password");
   } else {
     this.serverService.callLogin(email, password).subscribe(

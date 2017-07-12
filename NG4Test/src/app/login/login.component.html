@@ -1,5 +1,5 @@
-<form [formGroup]="myForm" (ngSubmit)="login()">
+<form [formGroup]="myForm" (ngSubmit)="login(email, password)">
   Email id : <input type="text" formControlName="email"/>
   Password : <input type="password" formControlName="password"/>
-  <button (click)="login(email,password)"> Submit</button> <button routerLink="/register"> Register</button>
+  <button > Submit</button> <button routerLink="/register"> Register</button>
 </form>
