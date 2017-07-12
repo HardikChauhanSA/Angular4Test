@@ -11,9 +11,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   public myForm : FormGroup;
-  public email : string;
-  public password : string;
-
   constructor(private serverService : ServerService, private router : Router) {
    }
 
@@ -31,6 +28,7 @@ login(email : string, password : string){
     this.serverService.callLogin(email, password).subscribe(
     (response) => {
       console.log(response);
+      this.router.navigate(['vehicles']);
     },
     (error) => console.log(error)
   );
