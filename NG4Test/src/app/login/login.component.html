@@ -1,7 +1,5 @@
-<div>
-  Email id : <input type="text" [(ngModel)]="email" />
-  <br />
-  Password : <input type="password" [(ngModel)]="password"/>
-  <br />
-  <button (click)="login(email,password)"> Submit</button> <button routerLink="/register">Register</button>
-</div>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  Email id : <input type="text" formControlName="email"/>
+  Password : <input type="password" formControlName="password"/>
+  <button (click)="login(email,password)"> Submit</button> <button routerLink="/register"> Register</button>
+</form>

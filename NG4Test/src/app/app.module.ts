@@ -10,11 +10,12 @@ import {ServerService} from './server.service';
 import { RegisterComponent } from './register/register.component'
 
 const routes: Routes = [
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '', component: LoginComponent},
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent}
 ];
+
+export const routing = RouterModule.forRoot(routes);
 
 @NgModule({
   declarations: [

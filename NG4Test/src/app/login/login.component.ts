@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ServerService} from './../server.service';
 import { RouterModule, Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,15 +10,18 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  public myForm : FormGroup;
   public email : string;
   public password : string;
 
   constructor(private serverService : ServerService, private router : Router) {
-      this.email = '';
-      this.password = '';
    }
 
   ngOnInit() {
+    this.myForm = new FormGroup({
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, [Validators.required]),
+});
   }
 
 login(email : string, password : string){
@@ -29,7 +34,8 @@ login(email : string, password : string){
     },
     (error) => console.log(error)
   );
-  }
+}
+this.myForm.reset();
 }
 
 register(){

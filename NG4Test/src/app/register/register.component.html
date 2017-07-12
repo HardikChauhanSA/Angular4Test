@@ -1,28 +1,28 @@
 <form>
-  First Name : <input type="text" [(ngModel)]="firstname" required/>
+  First Name : <input type="text" [(ngModel)]="person.firstname" name="first" required/>
   <br />
-  Last Name : <input type="text" [(ngModel)]="lastname"/required>
+  Last Name : <input type="text" [(ngModel)]="person.lastname" name="last" required />
   <br />
-  Email id : <input type="email" [(ngModel)]="email" required/>
+  Email id : <input type="email" [(ngModel)]="person.email" name="email" required/>
   <br />
-  Password : <input type="password" [(ngModel)]="password" required/>
+  Password : <input type="password" [(ngModel)]="person.password" name="password" required/>
   <br />
-  confirm Password : <input type="password" [(ngModel)]="confirmpassword" required/>
+  confirm Password : <input type="password" [(ngModel)]="person.confirmpassword" name="confirmpassword" required/>
   <br />
-  Birth Date : <input type="date" [(ngModel)]="bdare"/>
+  Birth Date : <input type="date" [(ngModel)]="person.bdate" name="bdate"/>
   <br />
-  profile pic : <input type="file" [(ngModel)]="profilepic"/>
+  profile pic : <input type="file"  />
   <br />
-  <input type="checkbox" [(ngModel)]="checkaggreement" required/> Aggrement
+  <input type="checkbox" [(ngModel)]="person.checkaggreement" name="checkaggreement" required/> Aggrement
   <br />
-  Flat Block :  <select>
+  Flat Block :  <select [(ngModel)]="person.flatblock" name="flatblock" required>
   <option value="a">A</option>
   <option value="b">B</option>
   <option value="c">C</option>
   <option value="d">D</option>
 </select> 
   <br />
-  Password : <input type="password" [(ngModel)]="password"/>
+  Flat Number : <input type="number" [(ngModel)]="person.flatnumber" min="1" max="20" name="flatnumber" required/>
   <br />
-  <button (click)="login(email,password)"> Submit</button> <button routerLink="/register">Register</button>
+  <button (click)="registerUser(person)"> Register</button>
 </form>
